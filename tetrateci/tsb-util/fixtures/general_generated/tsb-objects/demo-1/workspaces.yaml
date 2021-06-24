@@ -1,0 +1,13 @@
+apiversion: api.tsb.tetrate.io/v2
+kind: Workspace
+metadata:
+  organization: tetrate
+  name: bookinfo-t1-ws1
+  tenant: bookinfo-tenant-1
+spec:
+  displayName: bookinfo-t1-ws1
+  namespaceSelector:
+    names:
+    - demo/t1-w1-demo-d-bookinfo-mid-n0
+    - demo/t1-w1-demo-d-bookinfo-back-n0
+    - demo/t1-w1-demo-d-bookinfo-front-n0

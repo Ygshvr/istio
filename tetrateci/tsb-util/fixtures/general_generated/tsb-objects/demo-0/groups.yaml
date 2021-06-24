@@ -1,0 +1,44 @@
+apiVersion: gateway.tsb.tetrate.io/v2
+kind: Group
+metadata:
+  organization: tetrate
+  name: bookinfo-t0-w0-bridged-gg0
+  workspace: bookinfo-t0-ws0
+  tenant: bookinfo-tenant-0
+spec:
+  displayName: bookinfo-t0-w0-bridged-gg0
+  namespaceSelector:
+    names:
+    - demo/t0-w0-demo-b-bookinfo-front-n0
+  configMode: BRIDGED
+---
+apiVersion: traffic.tsb.tetrate.io/v2
+kind: Group
+metadata:
+  organization: tetrate
+  name: bookinfo-t0-w0-bridged-tg0
+  workspace: bookinfo-t0-ws0
+  tenant: bookinfo-tenant-0
+spec:
+  displayName: bookinfo-t0-w0-bridged-tg0
+  namespaceSelector:
+    names:
+    - demo/t0-w0-demo-b-bookinfo-mid-n0
+  configMode: BRIDGED
+---
+apiVersion: security.tsb.tetrate.io/v2
+kind: Group
+metadata:
+  organization: tetrate
+  name: bookinfo-t0-w0-bridged-sg0
+  workspace: bookinfo-t0-ws0
+  tenant: bookinfo-tenant-0
+spec:
+  displayName: bookinfo-t0-w0-bridged-sg0
+  namespaceSelector:
+    names:
+    - demo/t0-w0-demo-b-bookinfo-front-n0
+    - demo/t0-w0-demo-b-bookinfo-mid-n0
+    - demo/t0-w0-demo-b-bookinfo-back-n0
+      
+  configMode: BRIDGED

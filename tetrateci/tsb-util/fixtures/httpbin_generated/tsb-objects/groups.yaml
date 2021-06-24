@@ -1,0 +1,42 @@
+apiVersion: gateway.tsb.tetrate.io/v2
+kind: Group
+metadata:
+  organization: tetrate
+  name: httpbin-t0-w0-b-gg0
+  workspace: httpbin-t0-ws0
+  tenant: tenant-0
+spec:
+  displayName: httpbin-t0-w0-b-gg0
+  namespaceSelector:
+    names:
+    - demo/t0-w0-demo-httpbin-b-front-n0
+  configMode: BRIDGED
+---
+apiVersion: traffic.tsb.tetrate.io/v2
+kind: Group
+metadata:
+  organization: tetrate
+  name: httpbin-t0-w0-b-tg0
+  workspace: httpbin-t0-ws0
+  tenant: tenant-0
+spec:
+  displayName: httpbin-t0-w0-b-tg0
+  namespaceSelector:
+    names:
+    - demo/t0-w0-demo-httpbin-b-front-n0
+  configMode: BRIDGED
+---
+apiVersion: security.tsb.tetrate.io/v2
+kind: Group
+metadata:
+  organization: tetrate
+  name: httpbin-t0-w0-b-sg0
+  workspace: httpbin-t0-ws0
+  tenant: tenant-0
+spec:
+  displayName: httpbin-t0-w0-b-sg0
+  namespaceSelector:
+    names:
+    - demo/t0-w0-demo-httpbin-b-front-n0
+
+  configMode: BRIDGED

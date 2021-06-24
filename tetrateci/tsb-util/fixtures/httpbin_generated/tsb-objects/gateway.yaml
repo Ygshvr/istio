@@ -1,0 +1,125 @@
+apiVersion: gateway.tsb.tetrate.io/v2
+kind: IngressGateway
+Metadata:
+  organization: tetrate
+  name: tsb-gateway
+  group: httpbin-t0-w0-b-gg0
+  workspace: httpbin-t0-ws0
+  tenant: tenant-0
+spec:
+  workloadSelector:
+    namespace: t0-w0-demo-httpbin-b-front-n0
+    labels:
+      app: tsb-gateway-t0-w0-demo-httpbin-b-front-n0
+  http:
+  
+  - name: httpbin0
+    port: 8443
+    hostname: httpbin0.tetrate.test.com
+    tls:
+      mode: SIMPLE
+      secretName: wildcard-credential
+    routing:
+      rules:
+      - route:
+          host: t0-w0-demo-httpbin-b-front-n0/httpbin0.t0-w0-demo-httpbin-b-front-n0.svc.cluster.local
+  
+  - name: httpbin1
+    port: 8443
+    hostname: httpbin1.tetrate.test.com
+    tls:
+      mode: SIMPLE
+      secretName: wildcard-credential
+    routing:
+      rules:
+      - route:
+          host: t0-w0-demo-httpbin-b-front-n0/httpbin1.t0-w0-demo-httpbin-b-front-n0.svc.cluster.local
+  
+  - name: httpbin2
+    port: 8443
+    hostname: httpbin2.tetrate.test.com
+    tls:
+      mode: SIMPLE
+      secretName: wildcard-credential
+    routing:
+      rules:
+      - route:
+          host: t0-w0-demo-httpbin-b-front-n0/httpbin2.t0-w0-demo-httpbin-b-front-n0.svc.cluster.local
+  
+  - name: httpbin3
+    port: 8443
+    hostname: httpbin3.tetrate.test.com
+    tls:
+      mode: SIMPLE
+      secretName: wildcard-credential
+    routing:
+      rules:
+      - route:
+          host: t0-w0-demo-httpbin-b-front-n0/httpbin3.t0-w0-demo-httpbin-b-front-n0.svc.cluster.local
+  
+  - name: httpbin4
+    port: 8443
+    hostname: httpbin4.tetrate.test.com
+    tls:
+      mode: SIMPLE
+      secretName: wildcard-credential
+    routing:
+      rules:
+      - route:
+          host: t0-w0-demo-httpbin-b-front-n0/httpbin4.t0-w0-demo-httpbin-b-front-n0.svc.cluster.local
+  
+  - name: httpbin5
+    port: 8443
+    hostname: httpbin5.tetrate.test.com
+    tls:
+      mode: SIMPLE
+      secretName: wildcard-credential
+    routing:
+      rules:
+      - route:
+          host: t0-w0-demo-httpbin-b-front-n0/httpbin5.t0-w0-demo-httpbin-b-front-n0.svc.cluster.local
+  
+  - name: httpbin6
+    port: 8443
+    hostname: httpbin6.tetrate.test.com
+    tls:
+      mode: SIMPLE
+      secretName: wildcard-credential
+    routing:
+      rules:
+      - route:
+          host: t0-w0-demo-httpbin-b-front-n0/httpbin6.t0-w0-demo-httpbin-b-front-n0.svc.cluster.local
+  
+  - name: httpbin7
+    port: 8443
+    hostname: httpbin7.tetrate.test.com
+    tls:
+      mode: SIMPLE
+      secretName: wildcard-credential
+    routing:
+      rules:
+      - route:
+          host: t0-w0-demo-httpbin-b-front-n0/httpbin7.t0-w0-demo-httpbin-b-front-n0.svc.cluster.local
+  
+  - name: httpbin8
+    port: 8443
+    hostname: httpbin8.tetrate.test.com
+    tls:
+      mode: SIMPLE
+      secretName: wildcard-credential
+    routing:
+      rules:
+      - route:
+          host: t0-w0-demo-httpbin-b-front-n0/httpbin8.t0-w0-demo-httpbin-b-front-n0.svc.cluster.local
+  
+  - name: httpbin9
+    port: 8443
+    hostname: httpbin9.tetrate.test.com
+    tls:
+      mode: SIMPLE
+      secretName: wildcard-credential
+    routing:
+      rules:
+      - route:
+          host: t0-w0-demo-httpbin-b-front-n0/httpbin9.t0-w0-demo-httpbin-b-front-n0.svc.cluster.local
+  
