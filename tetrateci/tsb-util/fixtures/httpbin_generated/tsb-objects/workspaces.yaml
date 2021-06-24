@@ -1,0 +1,11 @@
+apiversion: api.tsb.tetrate.io/v2
+kind: Workspace
+metadata:
+  organization: tetrate
+  name: httpbin-t0-ws0
+  tenant: tenant-0
+spec:
+  displayName: httpbin-t0-ws0
+  namespaceSelector:
+    names:
+    - demo/t0-w0-demo-httpbin-b-front-n0

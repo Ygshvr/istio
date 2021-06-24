@@ -1,0 +1,23 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  annotations:
+    tsb.tetrate.io/gatewayGroup: bookinfo-t1-w1-direct-gg0
+    tsb.tetrate.io/tenant: bookinfo-tenant-1
+    tsb.tetrate.io/organization: tetrate
+    tsb.tetrate.io/workspace: bookinfo-t1-ws1
+  name: t1-w1-demo-d-bookinfo-front-n0-gateway
+  namespace: t1-w1-demo-d-bookinfo-front-n0
+spec:
+  selector:
+    app: tsb-gateway-t1-w1-demo-d-bookinfo-front-n0
+  servers:
+  - hosts:
+    - t1-w1-demo-d-bookinfo-front-n0/t1-w1-demo-d-bookinfo-front-n0.tetrate.test.com
+    port:
+      name: https-bookinfo-direct
+      number: 8443
+      protocol: HTTPS
+    tls:
+      credentialName: t1-w1-demo-d-bookinfo-front-n0-credential
+      mode: SIMPLE

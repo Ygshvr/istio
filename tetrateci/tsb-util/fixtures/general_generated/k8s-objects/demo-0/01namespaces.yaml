@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    istio-injection: enabled
+  name: t0-w0-demo-b-bookinfo-front-n0
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    istio-injection: enabled
+  name: t0-w0-demo-b-bookinfo-mid-n0
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    istio-injection: enabled
+  name: t0-w0-demo-b-bookinfo-back-n0
+---

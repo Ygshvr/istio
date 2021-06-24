@@ -1,0 +1,23 @@
+apiVersion: traffic.tsb.tetrate.io/v2
+kind: ServiceRoute
+Metadata:
+  organization: tetrate
+  name: bookinfo-serviceroute-2
+  group: bookinfo-t0-w0-b-tg0
+  workspace: bookinfo-t0-ws0
+  tenant: tenant-0
+spec:
+  service: t0-w0-demo-bookinfo-b-front-n0/reviews-2.t0-w0-demo-bookinfo-b-front-n0.svc.cluster.local
+  subsets:
+  - name: v1
+    labels:
+      version: v1
+    weight: 60
+  - name: v2
+    labels:
+      version: v2
+    weight: 30
+  - name: v3
+    labels:
+      version: v3
+    weight: 10
