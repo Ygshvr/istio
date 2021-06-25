@@ -19,7 +19,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: details-2
-  namespace: t0-w0-demo-bookinfo-b-front-n0
+  namespace: t0w0demobkifnd0f
   labels:
     app: details-2
     service: details-2
@@ -34,7 +34,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: details-v1-2
-  namespace: t0-w0-demo-bookinfo-b-front-n0
+  namespace: t0w0demobkifnd0f
   labels:
     app: details-2
     version: v1
@@ -64,7 +64,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: ratings-2
-  namespace: t0-w0-demo-bookinfo-b-front-n0
+  namespace: t0w0demobkifnd0f
   labels:
     app: ratings-2
     service: ratings-2
@@ -79,7 +79,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ratings-v1-2
-  namespace: t0-w0-demo-bookinfo-b-front-n0
+  namespace: t0w0demobkifnd0f
   labels:
     app: ratings-2
     version: v1
@@ -109,7 +109,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: reviews-2
-  namespace: t0-w0-demo-bookinfo-b-front-n0
+  namespace: t0w0demobkifnd0f
   labels:
     app: reviews-2
     service: reviews-2
@@ -124,7 +124,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: reviews-v1-2
-  namespace: t0-w0-demo-bookinfo-b-front-n0
+  namespace: t0w0demobkifnd0f
   labels:
     app: reviews-2
     version: v1
@@ -148,13 +148,13 @@ spec:
         - containerPort: 9080
         env:
         - name: RATINGS_HOSTNAME
-          value: ratings-2.t0-w0-demo-bookinfo-b-front-n0.svc.cluster.local
+          value: ratings-2.t0w0demobkifnd0f.svc.cluster.local
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: reviews-v2-2
-  namespace: t0-w0-demo-bookinfo-b-front-n0
+  namespace: t0w0demobkifnd0f
   labels:
     app: reviews-2
     version: v2
@@ -178,13 +178,13 @@ spec:
         - containerPort: 9080
         env:
         - name: RATINGS_HOSTNAME
-          value: ratings-2.t0-w0-demo-bookinfo-b-front-n0.svc.cluster.local
+          value: ratings-2.t0w0demobkifnd0f.svc.cluster.local
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: reviews-v3-2
-  namespace: t0-w0-demo-bookinfo-b-front-n0
+  namespace: t0w0demobkifnd0f
   labels:
     app: reviews-2
     version: v3
@@ -208,7 +208,7 @@ spec:
         - containerPort: 9080
         env:
         - name: RATINGS_HOSTNAME
-          value: ratings-2.t0-w0-demo-bookinfo-b-front-n0.svc.cluster.local
+          value: ratings-2.t0w0demobkifnd0f.svc.cluster.local
 ---
 ##################################################################################################
 # Productpage services
@@ -217,7 +217,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: productpage-2
-  namespace: t0-w0-demo-bookinfo-b-front-n0
+  namespace: t0w0demobkifnd0f
   labels:
     app: productpage-2
     service: productpage-2
@@ -232,7 +232,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: productpage-v1-2
-  namespace: t0-w0-demo-bookinfo-b-front-n0
+  namespace: t0w0demobkifnd0f
   labels:
     app: productpage-2
     version: v1
@@ -256,9 +256,9 @@ spec:
         - containerPort: 9080
         env:
         - name: DETAILS_HOSTNAME
-          value: details-2.t0-w0-demo-bookinfo-b-front-n0.svc.cluster.local
+          value: details-2.t0w0demobkifnd0f.svc.cluster.local
         - name: REVIEWS_HOSTNAME
-          value: reviews-2.t0-w0-demo-bookinfo-b-front-n0.svc.cluster.local
+          value: reviews-2.t0w0demobkifnd0f.svc.cluster.local
         - name: RATINGS_HOSTNAME
-          value: ratings-2.t0-w0-demo-bookinfo-b-front-n0.svc.cluster.local
+          value: ratings-2.t0w0demobkifnd0f.svc.cluster.local
 ---

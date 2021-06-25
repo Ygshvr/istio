@@ -3,11 +3,11 @@ kind: ServiceRoute
 Metadata:
   organization: tetrate
   name: bookinfo-serviceroute
-  group: bookinfo-t0-w0-bridged-tg0
-  workspace: bookinfo-t0-ws0
-  tenant: bookinfo-tenant-0
+  group: bkift0w0btg0
+  workspace: bkift0ws0
+  tenant: tenant0
 spec:
-  service: t0-w0-demo-b-bookinfo-mid-n0/reviews.t0-w0-demo-b-bookinfo-mid-n0.svc.cluster.local
+  service: t0w0demobkifnb0b/reviews.t0w0demobkifnb0b.svc.cluster.local
   subsets:
   - name: v1
     labels:

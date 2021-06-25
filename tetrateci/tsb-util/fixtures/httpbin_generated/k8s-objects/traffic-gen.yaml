@@ -4,7 +4,7 @@ metadata:
   labels:
     app: trafficgenerator
   name: trafficgenerator
-  namespace: t0-w0-demo-httpbin-b-front-n0
+  namespace: t0w0demohtbnnb0f
 spec:
   replicas: 1
   selector:
@@ -29,7 +29,7 @@ spec:
           while :; do
             while [[ ${PORT} == "" ]]; do
               echo "Fetching Port"
-              PORT=$(kubectl get service -n t0-w0-demo-httpbin-b-front-n0 tsb-gateway-t0-w0-demo-httpbin-b-front-n0 -o jsonpath='{.spec.ports[?(@.port==443)].nodePort}')
+              PORT=$(kubectl get service -n t0w0demohtbnnb0f tsb-gateway-t0w0demohtbnnb0f -o jsonpath='{.spec.ports[?(@.port==443)].nodePort}')
               sleep 5
             done
 
@@ -56,18 +56,6 @@ spec:
               
               curl https://httpbin3.tetrate.test.com --connect-to httpbin3.tetrate.test.com:443:$IP:$PORT --cacert /etc/bookinfo/bookinfo-ca.crt &>/dev/null
               
-              curl https://httpbin4.tetrate.test.com --connect-to httpbin4.tetrate.test.com:443:$IP:$PORT --cacert /etc/bookinfo/bookinfo-ca.crt &>/dev/null
-              
-              curl https://httpbin5.tetrate.test.com --connect-to httpbin5.tetrate.test.com:443:$IP:$PORT --cacert /etc/bookinfo/bookinfo-ca.crt &>/dev/null
-              
-              curl https://httpbin6.tetrate.test.com --connect-to httpbin6.tetrate.test.com:443:$IP:$PORT --cacert /etc/bookinfo/bookinfo-ca.crt &>/dev/null
-              
-              curl https://httpbin7.tetrate.test.com --connect-to httpbin7.tetrate.test.com:443:$IP:$PORT --cacert /etc/bookinfo/bookinfo-ca.crt &>/dev/null
-              
-              curl https://httpbin8.tetrate.test.com --connect-to httpbin8.tetrate.test.com:443:$IP:$PORT --cacert /etc/bookinfo/bookinfo-ca.crt &>/dev/null
-              
-              curl https://httpbin9.tetrate.test.com --connect-to httpbin9.tetrate.test.com:443:$IP:$PORT --cacert /etc/bookinfo/bookinfo-ca.crt &>/dev/null
-              
               sleep 10
             done
           done
@@ -90,5 +78,5 @@ spec:
       - name: bookinfo
         secret:
           defaultMode: 420
-          secretName: t0-w0-demo-httpbin-b-front-n0-ca-cert
-      serviceAccountName: httpbin-serviceaccount
+          secretName: t0w0demohtbnnb0f-ca-cert
+      serviceAccountName: t0w0demohtbnnb0f-trafficgen-sa

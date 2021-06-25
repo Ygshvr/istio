@@ -4,7 +4,7 @@ metadata:
   labels:
     app: trafficgenerator
   name: trafficgenerator
-  namespace: t0-w0-demo-bookinfo-b-front-n0
+  namespace: t0w0demobkifnd0f
 spec:
   replicas: 1
   selector:
@@ -29,7 +29,7 @@ spec:
           while :; do
             while [[ ${PORT} == "" ]]; do
               echo "Fetching Port"
-              PORT=$(kubectl get service -n t0-w0-demo-bookinfo-b-front-n0 tsb-gateway-t0-w0-demo-bookinfo-b-front-n0 -o jsonpath='{.spec.ports[?(@.port==443)].nodePort}')
+              PORT=$(kubectl get service -n t0w0demobkifnd0f tsb-gateway-t0w0demobkifnd0f -o jsonpath='{.spec.ports[?(@.port==443)].nodePort}')
               sleep 5
             done
 
@@ -76,5 +76,5 @@ spec:
       - name: bookinfo
         secret:
           defaultMode: 420
-          secretName: t0-w0-demo-bookinfo-b-front-n0-ca-cert
-      serviceAccountName: httpbin-serviceaccount
+          secretName: t0w0demobkifnd0f-ca-cert
+      serviceAccountName: t0w0demobkifnd0f-trafficgen-sa

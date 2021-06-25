@@ -2,10 +2,11 @@ apiversion: api.tsb.tetrate.io/v2
 kind: Workspace
 metadata:
   organization: tetrate
-  name: bookinfo-t0-ws0
-  tenant: tenant-0
+  name: bkift0ws0
+  tenant: tenant0
 spec:
-  displayName: bookinfo-t0-ws0
+  displayName: bkift0ws0
   namespaceSelector:
     names:
-    - demo/t0-w0-demo-bookinfo-b-front-n0
+    - demo/t0w0demobkifnb0f
+    

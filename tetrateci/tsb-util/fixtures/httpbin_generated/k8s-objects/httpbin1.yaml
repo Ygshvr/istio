@@ -19,13 +19,13 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: httpbin1
-  namespace: t0-w0-demo-httpbin-b-front-n0
+  namespace: t0w0demohtbnnb0f
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: httpbin1
-  namespace: t0-w0-demo-httpbin-b-front-n0
+  namespace: t0w0demohtbnnb0f
   labels:
     app: httpbin1
     service: httpbin1
@@ -41,7 +41,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: httpbin1
-  namespace: t0-w0-demo-httpbin-b-front-n0
+  namespace: t0w0demohtbnnb0f
 spec:
   replicas: 1
   selector:

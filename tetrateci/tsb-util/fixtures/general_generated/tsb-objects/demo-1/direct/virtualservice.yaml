@@ -2,22 +2,22 @@ apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
   annotations:
-    tsb.tetrate.io/gatewayGroup: bookinfo-t1-w1-direct-gg0
-    tsb.tetrate.io/tenant: bookinfo-tenant-1
+    tsb.tetrate.io/gatewayGroup: bkift1w1dgg0
+    tsb.tetrate.io/tenant: tenant1
     tsb.tetrate.io/organization: tetrate
-    tsb.tetrate.io/workspace: bookinfo-t1-ws1
+    tsb.tetrate.io/workspace: bkift1ws1
   name: bookinfo-virtualservice
-  namespace: t1-w1-demo-d-bookinfo-front-n0
+  namespace: t1w1demobkifnd0f
 spec:
   exportTo:
   - .
   gateways:
-  - t1-w1-demo-d-bookinfo-front-n0/t1-w1-demo-d-bookinfo-front-n0-gateway
+  - t1w1demobkifnd0f/t1w1demobkifnd0f-gateway
   hosts:
-  - t1-w1-demo-d-bookinfo-front-n0.tetrate.test.com
+  - t1w1demobkifnd0f.tetrate.test.com
   http:
   - name: http
     route:
     - destination:
-        host: productpage.t1-w1-demo-d-bookinfo-front-n0.svc.cluster.local
+        host: productpage.t1w1demobkifnd0f.svc.cluster.local
       weight: 100

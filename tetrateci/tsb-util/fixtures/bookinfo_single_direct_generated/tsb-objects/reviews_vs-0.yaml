@@ -2,28 +2,28 @@ apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
   annotations:
-    tsb.tetrate.io/tenant: tenant-0
+    tsb.tetrate.io/tenant: tenant0
     tsb.tetrate.io/organization: tetrate
-    tsb.tetrate.io/trafficGroup: bookinfo-t0-w0-b-tg0
-    tsb.tetrate.io/workspace: bookinfo-t0-ws0
-  name: bookinfo-reviews-0
-  namespace: t0-w0-demo-bookinfo-b-front-n0
+    tsb.tetrate.io/trafficGroup: bkift0w0btg0
+    tsb.tetrate.io/workspace: bkift0ws0
+  name: bookinfo-serviceroute-0
+  namespace: t0w0demobkifnd0f
 spec:
   gateways:
   - mesh
   hosts:
-  - reviews-0.t0-w0-demo-bookinfo-b-front-n0.svc.cluster.local
+  - reviews-0.t0w0demobkifnd0f.svc.cluster.local
   http:
   - route:
     - destination:
-        host: reviews-0.t0-w0-demo-bookinfo-b-front-n0.svc.cluster.local
+        host: reviews-0.t0w0demobkifnd0f.svc.cluster.local
         subset: v1
       weight: 60
     - destination:
-        host: reviews-0.t0-w0-demo-bookinfo-b-front-n0.svc.cluster.local
+        host: reviews-0.t0w0demobkifnd0f.svc.cluster.local
         subset: v2
       weight: 30
     - destination:
-        host: reviews-0.t0-w0-demo-bookinfo-b-front-n0.svc.cluster.local
+        host: reviews-0.t0w0demobkifnd0f.svc.cluster.local
         subset: v3
       weight: 10

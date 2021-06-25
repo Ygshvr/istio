@@ -6,13 +6,13 @@ metadata:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: t1-w1-demo-d-bookinfo-mid-n0-editor
+  name: t1w1demobkifnd0b-editor
   namespace: config-update
 ---
 apiVersion: v1
 kind: Pod
 metadata:
-  name: t1-w1-demo-d-bookinfo-mid-n0-editorpod
+  name: t1w1demobkifnd0b-editorpod
   namespace: config-update
 spec:
   containers:
@@ -39,9 +39,9 @@ spec:
       tctl config users set admin --username admin --password "admin"
       tctl config profiles set demo --username admin --cluster demo
       tctl config profiles set-current demo
-      tctl login --org tetrate --password "admin" --username admin --tenant bookinfo-tenant-1
+      tctl login --org tetrate --password "admin" --username admin --tenant tenant1
       while :; do
-        tctl get networking.istio.io/v1beta1/VirtualService  --tenant bookinfo-tenant-1 -w bookinfo-t1-ws1 -t bookinfo-t1-w1-direct-tg0 -o json | jq ".[0]" > original.json
+        tctl get networking.istio.io/v1beta1/VirtualService  --tenant tenant1 -w bkift1ws1 -t bkift1w1dtg0 -o json | jq ".[0]" > original.json
         tmp=$(mktemp)
         jq ".spec.http[0].route[0].weight=50" original.json  > $tmp && cp $tmp new.json
         jq ".spec.http[0].route[1].weight=20" new.json  > $tmp && cp $tmp new.json
@@ -49,7 +49,7 @@ spec:
         echo "Applying version 1"
         tctl apply -f new.json
         sleep 100
-        tctl get networking.istio.io/v1beta1/VirtualService  --tenant bookinfo-tenant-1 -w bookinfo-t1-ws1 -t bookinfo-t1-w1-direct-tg0 -o json | jq ".[0]" > original.json
+        tctl get networking.istio.io/v1beta1/VirtualService  --tenant tenant1 -w bkift1ws1 -t bkift1w1dtg0 -o json | jq ".[0]" > original.json
         tmp=$(mktemp)
         jq ".spec.http[0].route[0].weight=60" original.json  > $tmp && cp $tmp new.json
         jq ".spec.http[0].route[1].weight=30" new.json  > $tmp && cp $tmp new.json
@@ -58,13 +58,13 @@ spec:
         tctl apply -f original.json
         sleep 100
       done
-  serviceAccount: t1-w1-demo-d-bookinfo-mid-n0-editor
+  serviceAccount: t1w1demobkifnd0b-editor
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   namespace: tsb
-  name: t1-w1-demo-d-bookinfo-mid-n0-editor-reader
+  name: t1w1demobkifnd0b-editor-reader
 rules:
 - apiGroups: [""]
   resources: ["services"]
@@ -73,13 +73,13 @@ rules:
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: t1-w1-demo-d-bookinfo-mid-n0-editor-binding
+  name: t1w1demobkifnd0b-editor-binding
   namespace: tsb
 subjects:
 - kind: ServiceAccount
-  name: t1-w1-demo-d-bookinfo-mid-n0-editor
+  name: t1w1demobkifnd0b-editor
   namespace: config-update
 roleRef:
   kind: Role
-  name: t1-w1-demo-d-bookinfo-mid-n0-editor-reader
+  name: t1w1demobkifnd0b-editor-reader
   apiGroup: ""

@@ -2,8 +2,8 @@ apiVersion: rbac.tsb.tetrate.io/v2
 kind: WorkspaceAccessBindings
 metadata:
   organization: tetrate
-  tenant: bookinfo-tenant-1
-  workspace: bookinfo-t1-ws1
+  tenant: tenant1
+  workspace: bkift1ws1
 spec:
   allow:
   - role: rbac/creator
@@ -15,9 +15,9 @@ apiVersion: rbac.tsb.tetrate.io/v2
 kind: TrafficAccessBindings
 metadata:
   organization: tetrate
-  tenant: bookinfo-tenant-1
-  workspace: bookinfo-t1-ws1
-  group: bookinfo-t1-w1-direct-tg0
+  tenant: tenant1
+  workspace: bkift1ws1
+  group: bkift1w1dtg0
 spec:
   allow:
   - role: rbac/writer

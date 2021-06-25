@@ -2,43 +2,43 @@ apiVersion: gateway.tsb.tetrate.io/v2
 kind: Group
 metadata:
   organization: tetrate
-  name: bookinfo-t0-w0-bridged-gg0
-  workspace: bookinfo-t0-ws0
-  tenant: bookinfo-tenant-0
+  name: bkift0w0bgg0
+  workspace: bkift0ws0
+  tenant: tenant0
 spec:
-  displayName: bookinfo-t0-w0-bridged-gg0
+  displayName: bkift0w0bgg0
   namespaceSelector:
     names:
-    - demo/t0-w0-demo-b-bookinfo-front-n0
+    - demo/t0w0demobkifnb0f
   configMode: BRIDGED
 ---
 apiVersion: traffic.tsb.tetrate.io/v2
 kind: Group
 metadata:
   organization: tetrate
-  name: bookinfo-t0-w0-bridged-tg0
-  workspace: bookinfo-t0-ws0
-  tenant: bookinfo-tenant-0
+  name: bkift0w0btg0
+  workspace: bkift0ws0
+  tenant: tenant0
 spec:
-  displayName: bookinfo-t0-w0-bridged-tg0
+  displayName: bkift0w0btg0
   namespaceSelector:
     names:
-    - demo/t0-w0-demo-b-bookinfo-mid-n0
+    - demo/t0w0demobkifnb0b
   configMode: BRIDGED
 ---
 apiVersion: security.tsb.tetrate.io/v2
 kind: Group
 metadata:
   organization: tetrate
-  name: bookinfo-t0-w0-bridged-sg0
-  workspace: bookinfo-t0-ws0
-  tenant: bookinfo-tenant-0
+  name: bkift0w0bsg0
+  workspace: bkift0ws0
+  tenant: tenant0
 spec:
-  displayName: bookinfo-t0-w0-bridged-sg0
+  displayName: bkift0w0bsg0
   namespaceSelector:
     names:
-    - demo/t0-w0-demo-b-bookinfo-front-n0
-    - demo/t0-w0-demo-b-bookinfo-mid-n0
-    - demo/t0-w0-demo-b-bookinfo-back-n0
-      
+    - demo/t0w0demobkifnb0f
+    - demo/t0w0demobkifnb0m
+    - demo/t0w0demobkifnb0b
+    
   configMode: BRIDGED

@@ -3,19 +3,19 @@ kind: Namespace
 metadata:
   labels:
     istio-injection: enabled
-  name: t1-w1-demo-d-bookinfo-front-n0
+  name: t1w1demobkifnd0f
 ---
 apiVersion: v1
 kind: Namespace
 metadata:
   labels:
     istio-injection: enabled
-  name: t1-w1-demo-d-bookinfo-mid-n0
+  name: t1w1demobkifnd0b
 ---
 apiVersion: v1
 kind: Namespace
 metadata:
   labels:
     istio-injection: enabled
-  name: t1-w1-demo-d-bookinfo-back-n0
+  name: t1w1demobkifnd0m
 ---

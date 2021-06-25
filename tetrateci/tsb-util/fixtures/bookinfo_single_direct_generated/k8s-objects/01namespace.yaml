@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
   labels:
     istio-injection: enabled
-  name: t0-w0-demo-bookinfo-b-front-n0
+  name: t0w0demobkifnd0f

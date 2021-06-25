@@ -3,14 +3,14 @@ kind: IngressGateway
 Metadata:
   organization: tetrate
   name: tsb-gateway
-  group: bookinfo-t0-w0-b-gg0
-  workspace: bookinfo-t0-ws0
-  tenant: tenant-0
+  group: bkifot0w0bgg0
+  workspace: bkift0ws0
+  tenant: tenant0
 spec:
   workloadSelector:
-    namespace: t0-w0-demo-bookinfo-b-front-n0
+    namespace: t0w0demobkifnb0f
     labels:
-      app: tsb-gateway-t0-w0-demo-bookinfo-b-front-n0
+      app: tsb-gateway-t0w0demobkifnb0f
   http:
   
   - name: productpage-0
@@ -22,7 +22,7 @@ spec:
     routing:
       rules:
       - route:
-          host: t0-w0-demo-bookinfo-b-front-n0/productpage-0.t0-w0-demo-bookinfo-b-front-n0.svc.cluster.local
+          host: t0w0demobkifnb0f/productpage-0.t0w0demobkifnb0f.svc.cluster.local
   
   - name: productpage-1
     port: 8443
@@ -33,7 +33,7 @@ spec:
     routing:
       rules:
       - route:
-          host: t0-w0-demo-bookinfo-b-front-n0/productpage-1.t0-w0-demo-bookinfo-b-front-n0.svc.cluster.local
+          host: t0w0demobkifnb0f/productpage-1.t0w0demobkifnb0f.svc.cluster.local
   
   - name: productpage-2
     port: 8443
@@ -44,5 +44,5 @@ spec:
     routing:
       rules:
       - route:
-          host: t0-w0-demo-bookinfo-b-front-n0/productpage-2.t0-w0-demo-bookinfo-b-front-n0.svc.cluster.local
+          host: t0w0demobkifnb0f/productpage-2.t0w0demobkifnb0f.svc.cluster.local
   

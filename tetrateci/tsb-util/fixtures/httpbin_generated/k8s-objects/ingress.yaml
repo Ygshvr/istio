@@ -1,8 +1,8 @@
 apiVersion: install.tetrate.io/v1alpha1
 kind: IngressGateway
 metadata:
-  name: tsb-gateway-t0-w0-demo-httpbin-b-front-n0
-  namespace: t0-w0-demo-httpbin-b-front-n0
+  name: tsb-gateway-t0w0demohtbnnb0f
+  namespace: t0w0demohtbnnb0f
 spec:
   kubeSpec:
     service:
